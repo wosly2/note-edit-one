@@ -149,7 +149,7 @@ public class Main {
         Dictionary<String, String> checkSymbols = new Hashtable<>();
         checkSymbols.put("unchecked", "✘");
         checkSymbols.put("checked", "✔");
-        checkSymbols.put("???", "?");
+        checkSymbols.put("unknown", "?");
 
         int line = 0;
         String edit = "";
@@ -162,7 +162,7 @@ public class Main {
             clearConsole();
             System.out.println("\n<NEO1.0>\n" + title);
             AtomicInteger indexCounter = new AtomicInteger(1);
-            checks.forEach((task, status) -> System.out.println(indexCounter.getAndIncrement() + " " + checkSymbols.get(status) + " " + task));
+            checks.forEach((task, status) -> System.out.println(" " + indexCounter.getAndIncrement() + " " + checkSymbols.get(status) + " " + task));
 
             // get user input
             System.out.print("\nedit> ");
@@ -177,7 +177,7 @@ public class Main {
                     } else if (checks.get(lineText).equals("unchecked")) {
                         checkVal = "checked";
                     } else {
-                        checkVal = "???";
+                        checkVal = "unknown";
                     }
                     checks.put(lineText, checkVal);
                 } catch (Exception e) {

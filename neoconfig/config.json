@@ -1,0 +1,9 @@
+{
+  "neo version": 1.0,
+  "path": "../notes-app-1/notes/",
+  "symbols": {
+    "checked": "✔",
+    "unchecked": "✘",
+    "unknown": "?"
+  }
+}
